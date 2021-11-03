@@ -70,7 +70,7 @@ class App {
     try{
       const res = await fetch(`https://newsapi.org/v2/everything?apiKey=${this.#apiKey}&language=es&q=${query}`);
       const data = await res.json();
-
+      console.log(data);
       this.news = data.articles.map((article)=>{
         //desestructuramos
         const {publishedAt, title, description, urlToImage, author, url} = article;
